@@ -23,17 +23,26 @@ flutter create .
 
 mac 这样安装
 ```
-brew install --cask homebrew/cask-versions/temurin8
-brew install android-sdk
+brew install --cask temurin14
+brew install android-platform-tools android-commandlinetools
 ```
 
-编辑 `~/.bash_aliases` 添加
-
+看一下最新版的sdk版本号
 ```
-export ANDROID_HOME="/usr/local/share/android-sdk"
+sdkmanager --list|rg platforms
 ```
 
 运行 `yes | sdkmanager --licenses`
+
+安装
+```
+sdkmanager "platform-tools" "platforms;android-31"
+```
+
+编辑 `~/.bash_alias`
+```
+export ANDROID_HOME=$(brew --prefix)/share/android-commandlinetools
+```
 
 编辑 `android/gradle/wrapper/gradle-wrapper.properties`
 
