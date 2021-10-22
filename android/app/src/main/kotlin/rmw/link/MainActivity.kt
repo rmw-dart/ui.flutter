@@ -1,4 +1,4 @@
-package com.example.rmw_link
+package rmw.link
 
 import io.flutter.embedding.android.FlutterActivity
 

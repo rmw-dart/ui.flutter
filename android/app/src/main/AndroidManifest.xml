@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rmw_link">
+    package="rmw.link">
    <application
         android:label="rmw_link"
         android:icon="@mipmap/ic_launcher">
