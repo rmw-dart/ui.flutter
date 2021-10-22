@@ -8,22 +8,21 @@ import 'package:flutter/services.dart';
 const COLOR_WHITE = Color(0xffffffff);
 
 void main() {
-  // 设置顶部状态栏颜色
-  SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: COLOR_WHITE));
   runApp(Init());
 }
 
 class Init extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // 设置顶部状态栏颜色
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: COLOR_WHITE, statusBarIconBrightness: Brightness.dark));
     final screen = MediaQueryData.fromWindow(window);
 
     final kraken = Kraken(
       bundlePath: 'dist/main.js',
       devToolsService: isDev ? ChromeDevToolsService() : null,
       background: COLOR_WHITE,
-      viewportHeight: window.physicalSize.height / window.devicePixelRatio,
     );
 
     return MaterialApp(
