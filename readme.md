@@ -37,6 +37,7 @@ sdkmanager --list|rg platforms
 安装
 ```
 sdkmanager "platform-tools" "platforms;android-31"
+ln -s /usr/local/share/android-commandlinetools/platform-tools/adb /usr/local/bin/adb
 ```
 
 编辑 `~/.bash_alias`
