@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(rmw LANGUAGES CXX)
+project(rmw_link LANGUAGES CXX)
 
-set(BINARY_NAME "rmw")
+set(BINARY_NAME "rmw_link")
 
 cmake_policy(SET CMP0063 NEW)
 
