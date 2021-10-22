@@ -21,7 +21,7 @@ flutter create .
 
 在安卓调试需要安装java和cocoapods
 
-mac 这样安装 `brew install oracle-jdk cocoapods`
+mac 这样安装 `brew install oracle-jdk android-sdk`
 
 编辑 `android/gradle/wrapper/gradle-wrapper.properties`
 
@@ -42,6 +42,8 @@ mac 这样安装 `brew install oracle-jdk cocoapods`
 `adb devices -l` 和 `flutter devices` 可以看到已经连接的设备
 
 ## macos 调试
+
+`brew install cocoapods `
 
 编辑 macos/Runner/Release.entitlements 和 macos/Runner/DebugProfile.entitlements  加上
 
