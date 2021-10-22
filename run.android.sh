@@ -4,4 +4,4 @@ DIR=$(cd "$(dirname "$0")"; pwd)
 set -ex
 cd $DIR
 
-flutter run -d 172.
+flutter run -d 192.
