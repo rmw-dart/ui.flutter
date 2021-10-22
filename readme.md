@@ -23,6 +23,10 @@ flutter create .
 
 mac 这样安装 `brew install oracle-jdk cocoapods`
 
+编辑 `android/gradle/wrapper/gradle-wrapper.properties`
+
+修改 `gradle-6.9-all.zip` → `gradle-7.2-all.zip`
+
 ### 无线连接小米手机
 
 先在开发者选项中启用无线调试，然后选择使用配对码配对。
