@@ -22,8 +22,11 @@ flutter create .
 在安卓调试需要安装java和cocoapods
 
 mac 这样安装
+
+### 命令行版本
+
 ```
-brew install --cask temurin14
+brew install --cask temurin11
 brew install android-platform-tools android-commandlinetools
 ```
 
@@ -48,6 +51,24 @@ export ANDROID_HOME=$(brew --prefix)/share/android-commandlinetools
 编辑 `android/gradle/wrapper/gradle-wrapper.properties`
 
 修改 `gradle-6.9-all.zip` → `gradle-7.2-all.zip`
+
+### android-studio 方式
+
+
+```
+brew install --cask android-studio
+```
+
+编辑 `.bash_alias`
+
+```
+export ANDROID_HOME=$HOME/Library/Android/sdk
+```
+
+
+[Tools -> SDK Manager -> SDK Tools. 安装 Google Play Licensing Library](https://stackoverflow.com/a/65372165/2030331)
+
+
 
 ### 无线连接小米手机
 
