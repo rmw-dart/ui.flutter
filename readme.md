@@ -104,3 +104,8 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 
 [Android开发之本地化显示应用名称](https://jingyan.baidu.com/article/0a52e3f4338477bf62ed72e4.html)
 
+Android 语言环境 zh_rCN \ zh_rTW \ zh_rTW , 见 https://android.googlesource.com/platform/packages/apps/Settings/+/master/res/
+
+
+
+
