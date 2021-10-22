@@ -21,7 +21,19 @@ flutter create .
 
 在安卓调试需要安装java和cocoapods
 
-mac 这样安装 `brew install oracle-jdk android-sdk`
+mac 这样安装
+```
+brew install --cask homebrew/cask-versions/temurin8
+brew install android-sdk
+```
+
+编辑 `~/.bash_aliases` 添加
+
+```
+export ANDROID_HOME="/usr/local/share/android-sdk"
+```
+
+运行 `yes | sdkmanager --licenses`
 
 编辑 `android/gradle/wrapper/gradle-wrapper.properties`
 
