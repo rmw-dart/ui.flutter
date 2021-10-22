@@ -78,3 +78,8 @@ export ANDROID_HOME=$(brew --prefix)/share/android-commandlinetools
 
 支持网络请求
 
+
+## 本地化
+
+[Android开发之本地化显示应用名称](https://jingyan.baidu.com/article/0a52e3f4338477bf62ed72e4.html)
+
