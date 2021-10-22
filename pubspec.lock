@@ -150,7 +150,7 @@ packages:
     source: hosted
     version: "0.8.4"
   kraken_devtools:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: kraken_devtools
       url: "https://pub.dartlang.org"
