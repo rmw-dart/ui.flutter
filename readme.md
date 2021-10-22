@@ -108,4 +108,6 @@ Android 语言环境 zh_rCN \ zh_rTW \ zh_rTW , 见 https://android.googlesource
 
 
 
+## flutter 热重载
 
+在命令行输入r

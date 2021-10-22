@@ -2,27 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:kraken/kraken.dart';
 import 'package:kraken_devtools/kraken_devtools.dart';
 import 'const.dart';
+import 'dart:ui' show window;
+
+const COLOR_WHITE = Color(0xffffffff);
 
 void main() {
-  runApp(MyApp());
+  runApp(Init());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class Init extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Kraken kraken = Kraken(
-      bundleURL:
-          'http://kraken.oss-cn-hangzhou.aliyuncs.com/demo/guide-styles.js',
+    final screen = MediaQueryData.fromWindow(window);
+
+    final kraken = Kraken(
+      bundlePath: 'dist/main.js',
       devToolsService: isDev ? ChromeDevToolsService() : null,
+      background: COLOR_WHITE,
+      viewportHeight: window.physicalSize.height / window.devicePixelRatio,
     );
 
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        home: kraken);
+        title: 'rmw.link',
+        theme: ThemeData(),
+        home: Container(
+            padding: EdgeInsets.only(top: screen.padding.top), child: kraken));
   }
 }
