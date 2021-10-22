@@ -37,4 +37,16 @@ mac 这样安装 `brew install oracle-jdk cocoapods`
 
 `adb devices -l` 和 `flutter devices` 可以看到已经连接的设备
 
+## macos 调试
+
+编辑 macos/Runner/Release.entitlements 和 macos/Runner/DebugProfile.entitlements  加上
+
+```
+<key>com.apple.security.network.server</key>
+<true/>
+<key>com.apple.security.network.client</key>
+<true/>
+```
+
+支持网络请求
 
