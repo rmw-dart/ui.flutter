@@ -4,14 +4,114 @@
 
 ## 学习的代码库地址
 
-* 界面开发 https://github.com/rmw-dart/ui
+* 前端界面 https://github.com/rmw-dart/ui
 * 应用打包 https://github.com/rmw-dart/ui.flutter
+
+kraken:版本0.8.4
+
+用yarn安装总是失败，改用npm安装如下
+
+```
+npm install -g @openkraken/cli
+```
+
+
 
 ## 如何调试前端界面
 
+为了调试时候可以加载图片，需要启动一个服务器，配置比较复杂，如下
+
+package.json
+
+```
+{
+  "scripts": {
+    "dev": "concurrently --kill-others \"vite build --mode=development --watch\" \"npx nodemon --exec 'kraken http://localhost:5000/main.js' --watch 'dist/**/*' -e coffee,js,mjs,json,wasm,txt,yaml\"",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vue": "^3.2.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "coffeescript": "^2.6.1",
+    "concurrently": "^6.3.0",
+    "nodemon": "^2.0.14",
+    "rollup-plugin-coffee2": "^0.1.16",
+    "rollup-plugin-pug": "^1.1.1",
+    "vite": "^2.6.10"
+  },
+  "type": "module"
+}
+```
+
+dev.sh
+
+```
+npx concurrently --kill-others "vite preview --host 0.0.0.0" "yarn dev"
+```
+
+vite.config.js
+
+```
+import { defineConfig } from 'vite'
+
+import vue from '@vitejs/plugin-vue'
+import coffee from 'rollup-plugin-coffee2'
+import pug from 'rollup-plugin-pug'
+
+export default defineConfig(
+  ({ mode }) =>{
+    const isDev = mode !== 'production';
+
+    return {
+      base: isDev ? 'http://localhost:5000':'',
+      plugins: [
+        coffee({
+          bare:true,
+          sourceMap: true // 不设置true会报错，很奇怪
+        }),
+        pug(),
+        vue()
+      ],
+
+      build: {
+        minify: !isDev,
+        rollupOptions: {
+          input: 'src/main.js',
+          output: {
+            entryFileNames: `[name].js`,
+            manualChunks: {}
+          }
+        }
+      }
+    }
+  }
+)
+```
+
+使用图片，先import然后传参数。
+
+打包的时候，把build后图片打包到flutter即可。
+
+## 图标的使用
 
 
-## 集成vite到实际应用
+Kraken还不支持svg，所以用字体来渲染图标
+
+图标使用 https://feathericons.com ( size 20 ; stroke width 1.5 )
+
+有些svg不太能转换为字体，可用 https://iconly.io/tools/svg-convert-stroke-to-fill 预处理下。
+
+https://iconfont.cn 上，项目设置Font Family可以定义字体的名字。
+
+下载后安装.ttf到本机。
+
+应用打包可以参考 [flutter使用自定义字体](https://flutter.cn/docs/cookbook/design/fonts)，flutter只支持ttf的字体。
+
+
+
+# 集成vite到实际应用
 
 kraken: ^0.8.4 需要 flutter 2.2.3
 
