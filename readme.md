@@ -2,7 +2,7 @@
 
 想写一个去中心化的微博，记录下开发笔记。
 
-## 学习的代码库地址
+## 本文代码库地址
 
 * 前端界面 https://github.com/rmw-dart/ui
 * 应用打包 https://github.com/rmw-dart/ui.flutter
