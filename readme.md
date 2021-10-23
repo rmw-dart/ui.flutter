@@ -7,6 +7,9 @@
 * 前端界面 https://github.com/rmw-dart/ui
 * 应用打包 https://github.com/rmw-dart/ui.flutter
 
+
+## 安装 kraken
+
 kraken:版本0.8.4
 
 用yarn安装总是失败，改用npm安装如下
@@ -14,7 +17,6 @@ kraken:版本0.8.4
 ```
 npm install -g @openkraken/cli
 ```
-
 
 
 ## 如何调试前端界面
