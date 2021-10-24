@@ -103,7 +103,10 @@ export default defineConfig(
 
 Kraken还不支持svg，所以用字体来渲染图标
 
-图标使用 https://feathericons.com ( size 20 ; stroke width 1.5 )
+图标使用
+
+* https://feathericons.com ( size 20 ; stroke width 1.5 )
+* https://iconpark.oceanengine.com 字节跳动IconPark图标库
 
 有些svg不太能转换为字体，可用 https://iconly.io/tools/svg-convert-stroke-to-fill 预处理下。
 
@@ -112,6 +115,7 @@ https://iconfont.cn 上，项目设置Font Family可以定义字体的名字。
 下载后安装.ttf到本机。
 
 应用打包可以参考 [flutter使用自定义字体](https://flutter.cn/docs/cookbook/design/fonts)，flutter只支持ttf的字体。
+
 
 
 
