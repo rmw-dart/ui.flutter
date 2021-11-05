@@ -128,27 +128,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.3"
-  jsc:
-    dependency: transitive
-    description:
-      name: jsc
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.0"
   kraken:
     dependency: "direct main"
     description:
       name: kraken
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.4+1"
+    version: "0.9.0"
   kraken_devtools:
     dependency: "direct main"
     description:
       name: kraken_devtools
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.1"
+    version: "0.4.0-dev.0"
   matcher:
     dependency: transitive
     description:
